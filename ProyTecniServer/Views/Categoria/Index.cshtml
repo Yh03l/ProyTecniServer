@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ProyTecniServer.Models.Categoria>
+
+@{
+    ViewBag.Title = "Categorías";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de Categorías para los productos</h2>
+
+<p>
+    @Html.ActionLink("Agregar Categoría", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_Categoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre_Categoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.detalle)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id_Categoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_Categoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.detalle)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new {id=item.Id_Categoria}) |
+            @Html.ActionLink("Detalles", "Details", new {id=item.Id_Categoria}) |
+            @Html.ActionLink("Eliminar", "Delete", new {id=item.Id_Categoria})
+        </td>
+    </tr>
+}
+
+</table>

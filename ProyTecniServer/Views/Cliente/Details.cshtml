@@ -1,0 +1,51 @@
+﻿@model ProyTecniServer.Models.Cliente
+
+@{
+    ViewBag.Title = "Detalle Cliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DETALLE DEL</h2>
+
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            ID
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_Cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+
+        <dt>
+            TELÉFONO
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id_Cliente }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>
